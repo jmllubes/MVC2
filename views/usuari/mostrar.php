@@ -6,8 +6,11 @@
     <th>email</th>
     <th>password</th>
     <th>fecha</th>
+    <th>actualitzar</th>
+    <th>eliminar</th>
 </tr>
 
+<a href="http://"></a>
 <?php
 
     while ($row = $usuaris->fetch_assoc()){
@@ -18,9 +21,13 @@
         echo "<td>".$row["email"]."</td>";
         echo "<td>".$row["password"]."</td>";
         echo "<td>".$row["fecha"]."</td>";
+        echo "<td><a class=\"btn btn-warning btn-lg active\" href=\"#\">Actualitzar</a></button></td>";
+        echo "<td><a class=\"btn btn-danger btn-lg active\" href=\"#\">Eliminar</a></button></td>";
         echo "</tr>";
     }
 
 
 ?>
 </table>
+
+<a class="btn btn-primary btn-lg active" href="index.php?controller=usuari&action=insertar">Insertar</a></button>

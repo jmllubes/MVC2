@@ -98,6 +98,12 @@ class usuari{
         $result = mysqli_query($connexio, $sql);
         return $result;
     }
+    public function insertar(){
+        $connexio = database::connectar();
+        $sql = "INSERT INTO usuarios VALUES (null,'$this->nom','$this->cognom','$this->correu','$this->contrasenya')";
+        $result = mysqli_query($connexio, $sql);
+        return $result;
+    }
 
 
 
