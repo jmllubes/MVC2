@@ -93,7 +93,10 @@ class usuari{
     }
 
     public function mostrar(){
-        return "MOSTRAR USUARIS";
+        $connexio = database::connectar();
+        $sql = "SELECT * FROM usuarios";
+        $result = mysqli_query($connexio, $sql);
+        return $result;
     }
 
 
