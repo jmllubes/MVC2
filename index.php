@@ -2,8 +2,7 @@
 
 <?php 
 
-require_once "controller/usuari.php";
-require_once "controller/nota.php";
+require_once "autoload.php";
 
 if(isset($_GET["controller"]) && class_exists($_GET["controller"]) ){
     $nomcontroller = $_GET["controller"] . "Controller";
