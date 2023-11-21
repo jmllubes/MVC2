@@ -21,8 +21,8 @@
         echo "<td>".$row["email"]."</td>";
         echo "<td>".$row["password"]."</td>";
         echo "<td>".$row["fecha"]."</td>";
-        echo "<td><a class=\"btn btn-warning btn-lg active\" href=\"#\">Actualitzar</a></button></td>";
-        echo "<td><a class=\"btn btn-danger btn-lg active\" href=\"#\">Eliminar</a></button></td>";
+        echo "<td><a class=\"btn btn-warning btn-lg active\" href=\"index.php?controller=usuari&action=actualitzar&id=".$row["id"]."\">Actualitzar</a></button></td>";
+        echo "<td><a class=\"btn btn-danger btn-lg active\" href=\"index.php?controller=usuari&action=eliminar&id=".$row["id"]."\">Eliminar</a></button></td>";
         echo "</tr>";
     }
 

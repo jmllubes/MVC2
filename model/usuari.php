@@ -3,10 +3,14 @@
 require_once "config/database.php";
 class usuari{
 
+    public $id;
+    
     public $nom;
     public $cognom;
     public $correu;
     public $contrasenya;
+
+    public $fecha;
     
 
 
@@ -98,6 +102,13 @@ class usuari{
         $result = mysqli_query($connexio, $sql);
         return $result;
     }
+
+    public function mostrarperid(){
+        $connexio = database::connectar();
+        $sql = "SELECT * FROM usuarios WHERE id = $this->id";
+        $result = mysqli_query($connexio, $sql);
+        return $result;
+    }
     public function insertar(){
         $connexio = database::connectar();
         $sql = "INSERT INTO usuarios VALUES (null,'$this->nom','$this->cognom','$this->correu','$this->contrasenya')";
@@ -105,9 +116,63 @@ class usuari{
         return $result;
     }
 
+    public function actualitzar(){
+        $connexio = database::connectar();
+        $sql = "UPDATE usuarios SET nombre = '$this->nom', apellidos = '$this->cognom', email = '$this->correu', password = '$this->contrasenya' , fecha= '$this->fecha' WHERE id = $this->id";
+        $result = mysqli_query($connexio, $sql);
+        return $result;
+    }
+
+    public function eliminar(){
+        $connexio = database::connectar();
+        $sql = "DELETE FROM usuarios WHERE id = $this->id";
+        $result = mysqli_query($connexio, $sql);
+        return $result;
+    }
 
 
 
+
+
+    /**
+     * Get the value of id
+     */ 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */ 
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of fecha
+     */ 
+    public function getFecha()
+    {
+        return $this->fecha;
+    }
+
+    /**
+     * Set the value of fecha
+     *
+     * @return  self
+     */ 
+    public function setFecha($fecha)
+    {
+        $this->fecha = $fecha;
+
+        return $this;
+    }
 }
 
 
